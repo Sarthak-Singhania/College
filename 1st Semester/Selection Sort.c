@@ -24,9 +24,7 @@ int main()
     selectionSort(arr,n);
     printf("Sorted array: \n");
     int i;
-    for (i=0;i<n
-      ;i++)
-        printf("%d ",arr[i]);
+    for (i=0;i<n;i++) printf("%d ",arr[i]);
     printf("\n");
     return 0;
 }
