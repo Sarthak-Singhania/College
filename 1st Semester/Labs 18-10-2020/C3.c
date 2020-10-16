@@ -1,21 +1,25 @@
-#include <stdio.h>
-int main(void)
-{
-    char text[100];
-    int begin,middle,end,length=0;
-    scanf("%s",text);
-    while (text[length]!='\0') length++;
-    end=length-1;
-    middle=length/2;
-    for (begin=0;begin<middle;begin++)
-    {
-        if (text[begin]!=text[end])
-        {
-        printf("Not a palindrome.\n");
-        break;
-        }
-        end--;
-    }
-    if (begin==middle) printf("Palindrome.\n");
-    return 0;
+#include <stdio.h> 
+#include <string.h>
+#include <ctype.h>
+int isPalRec(char str[],int s,int e) 
+{ 
+	if (s==e) return 1; 
+	if (strcasecmp(str[s],str[e])!=0) return 0; 
+	if (s<e+1) return isPalRec(str,s++,e--); 
+	return 1; 
+} 
+
+int isPalindrome(char str[]) 
+{ 
+	int n=strlen(str); 
+	if(n==0) return 1; 
+	return isPalRec(str, 0, n - 1); 
 }
+int main() 
+{ 
+	char str[500];
+	scanf("%[^\n]s",str); 
+	if (isPalindrome(str)) printf("Yes\n"); 
+	else printf("No\n"); 
+	return 0; 
+} 
