@@ -1,8 +1,9 @@
 #include <stdio.h> 
 #include <string.h>
+
 char reVal(int num) 
 { 
-	if (num >= 0 && num <= 9) return (char)(num+'0');
+	if (num>=0 && num<=9) return (char)(num+'0');
 	else return (char)(num-10+'A');
 } 
 
@@ -68,4 +69,3 @@ int main()
 	printf("\nConverted number: %s\n",fromDeci(res,base2,inputNum));
 	return 0;
 }
-
