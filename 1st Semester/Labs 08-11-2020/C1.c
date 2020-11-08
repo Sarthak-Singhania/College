@@ -121,20 +121,24 @@ int main(void) {
     scanf("%c",&op);
     getchar();//purge the newline
     switch (op){
-      case 'a':{
+      case 'a':
+      {
         printf("Give position and data for insert = ");
         scanf("%d %d", &pos, &info);
         getchar();//purge the newline char
         listp=insert(listp, pos, info);
         printNode(listp);
-        break;}
-      case 'd':{
+        break;
+        }
+      case 'd':
+      {
         printf("Give position for delete = ");
         scanf("%d", &pos);
         getchar();//purge newline char
         listp=delete(listp, pos);
         printNode(listp);
-        break;}
+        break;
+        }
       case 'l':
       {
         printf("Length of list = %d\n", findSize(listp));
